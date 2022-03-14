@@ -1,0 +1,36 @@
+<div class="container"  >
+  <h1>Login Form</h1>
+<form #userForm="ngForm" novalidate >
+  {{userForm.value|json}} <br>
+  {{userModel|json}}
+
+
+<div class="form-group" >
+  <label>Email</label>
+  <input  type="email" pattern="[a-z]+@" [class.is-invalid]="email.invalid&&email.touched" name="email" #email="ngModel"  [(ngModel)]="userModel.email" required class="form-control"    class="form-control" required  >
+
+  <div *ngIf="email.errors&&email.touched">
+    <small class="text-danger" *ngIf="email.errors['required']">Enter your email</small>
+    <small class="text-danger" *ngIf="email.errors['pattern']">Email must contain @</small>
+  </div>
+
+
+
+</div>
+
+<div class="form-group" >
+  <label>Password</label>
+  <input type="password"  name="password" #password="ngModel"  [class.is-invalid]="password.invalid&&password.touched"  [(ngModel)]="userModel.password" required class="form-control" >
+  <small class="text-danger" [class.d-none]="password.valid|| password.untouched" >Enter your password </small> <br>
+
+</div>
+
+
+<div>
+<button type="submit" class="btn btn-primary">Login</button>
+
+</div>
+<br>
+</form>
+
+</div>

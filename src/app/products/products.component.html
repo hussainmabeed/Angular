@@ -1,0 +1,71 @@
+<!-- <h1>Store name is ::: {{Store_Name}}</h1>
+
+<br><br>
+<br><br>
+
+<app-tow-way-binding></app-tow-way-binding>
+
+
+
+<div *ngIf="IsPurshased">
+    <h3 style="color: brown;">ngif while IsPurshased property is true</h3>
+    <h3>We offer an explicit discount of: {{Discount}}</h3>
+</div>
+
+<select  style="size: 20px; margin-left:150px ;">
+    <option *ngFor="let item of CategoryList" [value]="item"> {{item.Name}}</option>
+</select>
+
+<br>
+
+<button (click)="isflag()" style="color: blueviolet; width: 90px;">Buy</button>
+<div *ngIf="IsPurshased; then  table;else div"></div>
+<ng-template #table>
+    <table class="table table-dark table-striped">
+            <th>name</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>image</th>
+
+        <tr *ngFor="let item of ProductList">
+            <td>{{item.Name}}</td>
+            <td>{{item.Quantity}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Price}}</td>
+            <td> <img [src]="item.Img"  width="50" height="60"></td>
+
+
+        </tr>
+    </table>
+</ng-template>
+<ng-template #div>
+    <div style="font-size: 24px ;font-style: italic;color: brown;">
+        Thanks for purchasing from our Store {{ClientName}}
+    </div>
+    <h2 style="color: blueviolet;">store name with pipe {{Store_Name |uppercase}}</h2>
+<h2 style="color: blueviolet;">discount with percent {{discount|percent}}</h2>
+</ng-template> -->
+
+<!-- <button (click)="isflag()" style="color: blueviolet; width: 90px;">Buy</button>
+<div *ngIf="IsPurshased; then  div;else table"></div>
+<ng-template #table> -->
+  <app-header></app-header>
+  <table id="customers">
+      <th>name</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>image</th>
+
+  <tr *ngFor="let item of prodlist">
+      <td>{{item.Name}}</td>
+      <td>{{item.Quantity}}</td>
+      <td>{{item.Price}}</td>
+      <td> <img [src]="item.Img"  width="50" height="60"></td>
+ </tr>
+</table>
+<!-- </ng-template>
+<ng-template #div>
+</ng-template>
+<h3>Get prduct bu index</h3>
+<div>name :{{prod.Name}}  &nbsp;&nbsp;&nbsp; Quantity: {{prod.Quantity}} &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; price: {{prod.Price}} <img [src]="prod.Img"  width="50" height="60"></div> -->
+<app-footer></app-footer>
